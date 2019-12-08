@@ -4,8 +4,6 @@ T="$(date +%s)"
 
 source fusion_genes/config
 
-mkdir qc_filtered
-
 number=$(ls *.fastq.gz | rev | cut -c 22- | rev | sort | uniq | wc -l)
 
 
@@ -25,16 +23,18 @@ find *trim*fastq.gz | parallel fastqc {}
 
 multiqc . --ignore qc/
 
-mv *zip *html multiqc* *.json qc_filtered/
-
-
 if [ `ls -1 *trim*fastq.gz 2>/dev/null | wc -l ` -gt 0 ];
 
 then 
 
 echo "INFO: Trimming was performed. Creating original_fastq folder and moving original FASTQ files there"
 
+mkdir trimm_fastq
+mkdir qc_filtered
+
+
+find . -type f \( -name "*trim*.fastq.gz*" \) -exec mv {} trimm_fastq \;
+mv *zip *html multiqc* *.json qc_filtered/
+
 
 fi
-
-#mv *trim*fastq.gz fastq_filtered/
