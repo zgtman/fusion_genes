@@ -4,7 +4,7 @@ T="$(date +%s)"
 
 source fusion_genes/config
 
-mkdir -f qc
+mkdir qc
 
 echo "INFO: Running FASTQC..."
 
