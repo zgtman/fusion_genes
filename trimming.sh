@@ -19,9 +19,6 @@ fastp -i ${i}_L001_R1_001.fastq.gz -I ${i}_L001_R2_001.fastq.gz -o ${i}_trim_L00
 
 done;
 
-find *trim*fastq.gz | parallel fastqc {}
-
-multiqc . --ignore qc/
 
 if [ `ls -1 *trim*fastq.gz 2>/dev/null | wc -l ` -gt 0 ];
 
@@ -29,11 +26,16 @@ then
 
 echo "INFO: Trimming was performed. Creating original_fastq folder and moving original FASTQ files there"
 
+find *trim*fastq.gz | parallel fastqc {}
+
+multiqc . --ignore qc/
+
 mkdir trimm_fastq
 mkdir qc_filtered
 
+mv *trim*fastq.gz trimm_fastq/
 
-find . -type f \( -name "*trim*.fastq.gz*" \) -exec mv {} trimm_fastq \;
+#find . -type f \( -name "*trim*.fastq.gz*" \) -exec mv {} trimm_fastq/ \;
 mv *zip *html multiqc* *.json qc_filtered/
 
 
