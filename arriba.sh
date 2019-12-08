@@ -33,7 +33,7 @@ mv *html *json *zip multiqc* qc_all_data/
 
 mkdir arriba_result
 
-mv *fusion* arriba_result/
+mv *fusions*tsv arriba_result/
 
 done;
 
