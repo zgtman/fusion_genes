@@ -20,9 +20,20 @@ arriba \
 	-o ${i%.bam}_fusions.tsv -O ${i%.bam}_fusions.discarded.tsv \
 	-a "$REFERENCE" -g "$GENCODE" -b "$BLACK_LIST" \
 	-T -P \
-#	-d structural_variants_from_WGS.tsv \
-	-k $COSMIC_FUSION # see section "Complete Fusion Export" at http://cancer.sanger.ac.uk/cosmic/download
+   	-k $COSMIC_FUSION # see section "Complete Fusion Export" at http://cancer.sanger.ac.uk/cosmic/download
 
+#	-d structural_variants_from_WGS.tsv \
+
+
+multiqc . --ignore qc/
+
+mkdir qc_all_data
+
+mv *html *json *zip multiqc* qc_all_data/
+
+mkdir arriba_result
+
+mv *fusion* arriba_result/
 
 done;
 
