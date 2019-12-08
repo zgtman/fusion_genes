@@ -2,6 +2,6 @@
 Arriva gene fusion automatic workflow
 
 INSTALATION INSTRUCTION:
-
-conda install -c bioconda arriba
+sudo yum install parallel
+conda install -c bioconda arriba multiqc fastqc
 conda install -c bioconda/label/cf201901 star
