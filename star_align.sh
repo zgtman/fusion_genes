@@ -25,7 +25,7 @@ STAR \
 	--chimSegmentMin 10 --chimOutType WithinBAM SoftClip --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 --chimSegmentReadGapMax 3 > ${i}_out.bam
 
 
-samtools sort -@ "$cpu" -m 100G -T tmp -O bam ${i}_out.bam > ${i}_out_sorted.bam
+samtools sort -@ "$cpu" -T tmp -O BAM ${i}_out.bam > ${i}_out_sorted.bam
 rm -f ${i}_out.bam
 samtools index ${i}_out_sorted.bam
 
