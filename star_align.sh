@@ -22,7 +22,7 @@ STAR \
 	--outStd BAM_Unsorted --outSAMtype BAM Unsorted --outSAMunmapped Within --outBAMcompression 0 \
 	--outFilterMultimapNmax 1 --outFilterMismatchNmax 3 \
     --outFileNamePrefix ${i} \
-	--chimSegmentMin 10 --chimOutType WithinBAM SoftClip --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 --chimSegmentReadGapMax 3 | tee ${i}_out.bam
+	--chimSegmentMin 10 --chimOutType WithinBAM SoftClip --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 --chimSegmentReadGapMax 3 > ${i}_out.bam
 
 
 samtools sort -@ "$cpu" -m 100G -T tmp -O bam ${i}_out.bam > ${i}_out_sorted.bam
