@@ -1,5 +1,7 @@
 ## CONFIGURATION FILE TO GENE FUSION WORKFLOW
 
+cpu=$(nproc)
+memory=32
 
 STAR_INDEX=/home/broz/data/bioinformatics/Databases/hg38/star_index/
 REFERENCE=/home/broz/data/bioinformatics/Databases/hg38/primary_assembly_hg38.fa
