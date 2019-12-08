@@ -19,7 +19,7 @@ STAR \
 	--readFilesIn ${i}_trim_L001_R1_001.fastq.gz ${i}_trim_L001_R2_001.fastq.gz --readFilesCommand zcat \
 	--outStd BAM_Unsorted --outSAMtype BAM Unsorted --outSAMunmapped Within --outBAMcompression 0 \
 	--outFilterMultimapNmax 1 --outFilterMismatchNmax 3 \
-    ----outFileNamePrefix ${i} \
+    --outFileNamePrefix ${i} \
 	--chimSegmentMin 10 --chimOutType WithinBAM SoftClip --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 --chimSegmentReadGapMax 3 | tee ${i}_out.bam
 
 
