@@ -6,12 +6,12 @@ source fusion_genes/config
 
 ln -s fusion_genes/config
 ln -s fusion_genes/fastqc_check.sh
-
+ln -s fusion_genes/trimming.sh
 
 ### RUN SCRIPT
 
 bash fastqc_check.sh
-
+bash trimming.sh
 
 
 
@@ -19,7 +19,7 @@ bash fastqc_check.sh
 
 unlink config
 unlink fastqc_check.sh
-
+unlink trimming.sh
 
 
 
