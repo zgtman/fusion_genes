@@ -28,15 +28,15 @@ echo "INFO: Trimming was performed. Creating original_fastq folder and moving or
 
 find *trim*fastq.gz | parallel fastqc {}
 
-multiqc . --ignore qc/
+#multiqc . --ignore qc/
 
-mkdir trimm_fastq
-mkdir qc_filtered
+#mkdir trimm_fastq
+#mkdir qc_filtered
 
-mv *trim*fastq.gz trimm_fastq/
+#mv *trim*fastq.gz trimm_fastq/
 
 #find . -type f \( -name "*trim*.fastq.gz*" \) -exec mv {} trimm_fastq/ \;
-mv *zip *html multiqc* *.json qc_filtered/
+#mv *zip *html multiqc* *.json qc_filtered/
 
 
 fi
