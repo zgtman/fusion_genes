@@ -17,11 +17,13 @@ echo "INFO: Analyzing file: $i"
 
 arriba \
 	-x $i \
-	-o ${i%.bam}_fusions.tsv -O ${i%.bam}_fusions.discarded.tsv \
-	-a "$REFERENCE" -g "$GENCODE" -b "$BLACK_LIST" \
+	-o ${i%.bam}_fusions.tsv \
+	-O ${i%.bam}_fusions.discarded.tsv \
+	-a "$REFERENCE" \
+	-g "$GENCODE" \
+	-b "$BLACK_LIST" \
 	-T -P \
    	-k $COSMIC_FUSION # see section "Complete Fusion Export" at http://cancer.sanger.ac.uk/cosmic/download
-
 #	-d structural_variants_from_WGS.tsv \
 
 
