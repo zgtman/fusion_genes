@@ -12,9 +12,9 @@ ln -s fusion_genes/arriba.sh
 
 ### RUN SCRIPT
 
-#bash fastqc_check.sh
-#bash trimming.sh
-#bash star_align.sh
+bash fastqc_check.sh
+bash trimming.sh
+bash star_align.sh
 bash arriba.sh
 
 
