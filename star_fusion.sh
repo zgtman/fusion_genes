@@ -42,7 +42,7 @@ STAR \
 	--chimNonchimScoreDropMin 10 \
 	--peOverlapNbasesMin 12 \
 	--peOverlapMMp 0.1 \
-   	--chimOutJunctionFormat 1 --chimScoreJunctionNonGTAG 0 \
+   	--chimScoreJunctionNonGTAG 0 \
 	--chimSegmentReadGapMax 3 > ${i}_out.bam
 
 
