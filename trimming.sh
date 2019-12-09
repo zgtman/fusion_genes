@@ -26,7 +26,7 @@ then
 
 echo "INFO: Trimming was performed. Creating original_fastq folder and moving original FASTQ files there"
 
-find *trim*fastq.gz | parallel fastqc {}
+find . -type f -iname "*trim*fastq.gz" | parallel fastqc {}
 
 #multiqc . --ignore qc/
 
