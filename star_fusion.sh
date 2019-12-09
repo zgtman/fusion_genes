@@ -23,13 +23,11 @@ STAR \
 	--readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
 	--readFilesCommand "gunzip -c" \
 	--twopassMode Basic \
-	--outSAMstrandField intronMotif \   # bam to tdout
-	--outBAMcompression 0 \
+	--outSAMstrandField intronMotif --outBAMcompression 0 \
 	--outFilterMultimapNmax 1 --outFilterMismatchNmax 3 \
 	--outFileNamePrefix ${i} \
 	--chimSegmentMin 10 \
-	--alignMatesGapMax 100000 \ # avoid readthru fusions within 100k
-	--alignIntronMax 100000 \
+	--alignMatesGapMax 100000 --alignIntronMax 100000 \
     --alignSJDBoverhangMin 10 \
 	--chimOutType WithinBAM SoftClip \
     --chimMultimapScoreRange 3 \
@@ -37,8 +35,7 @@ STAR \
     --outSAMattrRGline ID:GRPundef \
 	--chimJunctionOverhangMin 10 \
 	--chimScoreMin 1 \
-	--chimOutJunctionFormat 1 \ # **essential** includes required metadata in Chimeric.junction.out file.
-	--chimScoreJunctionNonGTAG 0 \
+	--chimOutJunctionFormat 1 --chimScoreJunctionNonGTAG 0 \
 	--chimScoreSeparation 1 \
 	--alignSJstitchMismatchNmax 5 -1 5 5 \
 	--chimNonchimScoreDropMin 10 \
