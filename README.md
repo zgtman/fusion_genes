@@ -10,7 +10,7 @@
 *conda install -c bioconda fastp*  
 ##### ADDITIONAL INSTALLATION FOR STAR FUSION WORKFLOW  
 *conda install -c bioconda/label/cf201901 star-fusion*  
-##### TODO  
-**Test data to STAR-FUSION**
-**Parsing Result and concatanate to one**
-**Download all resource bundle**
+###### TODO  
+**Test data to STAR-FUSION**  
+**Parsing Result and concatanate to one**  
+**Download all resource bundle**  
