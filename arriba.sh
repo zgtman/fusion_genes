@@ -35,7 +35,7 @@ for i in *_fusions.tsv;
 
 do name=${i%_out*}
 
-awk -v name=$name 'NR>1{print name,$0}' $i >> tmp_result.xls
+awk -v name=$name '{OFS="\t"}NR>1{print name,$0}' $i >> tmp_result.xls
 
 done
 
