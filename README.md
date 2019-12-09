@@ -1,7 +1,7 @@
 # fusion genes workflow testing
-## based on star, arriva and star-fusion algorithms
+#### based on STAR, Arriva and STAR-FUSION algorithms
 ###### Created by Ales Vicha and Petr Broz
-## Isnatalation and run scripts by [Conda](https://www.anaconda.com/distribution/) - Python version 3.7
+#### First install [Conda](https://www.anaconda.com/distribution/) - Python version 3.7
 
 INSTALATION INSTRUCTION:  
 sudo yum install parallel  
