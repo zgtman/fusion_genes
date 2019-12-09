@@ -1,6 +1,10 @@
-     #!/bin/bash
+#!/bin/bash
 
-     # align FastQ files (STAR >=2.5.3a recommended)
+# align FastQ files (STAR >=2.5.3a recommended)
+
+
+source fusion_genes/config
+
 
 for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
