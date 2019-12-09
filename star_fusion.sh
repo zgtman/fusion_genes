@@ -23,7 +23,7 @@ STAR \
 	--readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
 	--readFilesCommand "gunzip -c" \
 	--twopassMode Basic \
-	--outSAMstrandField intronMotif --outBAMcompression 0 --outSAMtype BAM 
+	--outSAMstrandField intronMotif --outBAMcompression 0 --outSAMtype BAM \
 	--outFilterMultimapNmax 1 --outFilterMismatchNmax 3 \
 	--outFileNamePrefix ${i} \
 	--chimSegmentMin 10 \
