@@ -22,19 +22,18 @@ STAR \
 	--readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
 	--readFilesCommand "gunzip -c" \
 	--twopassMode Basic \
-	--outStd BAM_Unsorted \ # bam to tdout
-	--outSAMtype BAM Unsorted \ # nesorotvany - sortuji sam samtools
+	--outStd BAM_Unsorted --outSAMtype BAM Unsorted \
 	--outSAMunmapped Within \
 	--outBAMcompression 0 \
 	--outFilterMultimapNmax 1 --outFilterMismatchNmax 3 \
 	--outFileNamePrefix ${i} \
 	--chimSegmentMin 10 \
-	--alignMatesGapMax 100000 \   # avoid readthru fusions within 100k
+	--alignMatesGapMax 100000 \
 	--alignIntronMax 100000 \
 	--chimOutType WithinBAM SoftClip \
 	--chimJunctionOverhangMin 10 \
 	--chimScoreMin 1 \
-	--chimOutJunctionFormat 1 \ # **essential** includes required metadata in Chimeric.junction.out file.
+	--chimOutJunctionFormat 1 \
 	--chimScoreDropMax 30 \
 	--chimScoreJunctionNonGTAG 0 \
 	--chimScoreSeparation 1 \
