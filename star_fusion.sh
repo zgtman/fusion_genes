@@ -17,32 +17,27 @@ echo "INFO: Analyzing file: $i"
 
 
 STAR \
-	--runThreadN "$cpu" \
-	--genomeDir "$STAR_INDEX" \
-	--genomeLoad NoSharedMemory \
-	--readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
-	--readFilesCommand "gunzip -c" \
-	--twopassMode Basic \
-	--outStd BAM_Unsorted --outSAMtype BAM Unsorted \
-	--outSAMunmapped Within \
-	--outBAMcompression 0 \
-	--outFilterMultimapNmax 1 --outFilterMismatchNmax 3 \
-	--outFileNamePrefix ${i} \
-	--chimSegmentMin 10 \
-	--alignMatesGapMax 100000 \
-	--alignIntronMax 100000 \
-	--chimOutType WithinBAM SoftClip \
-	--chimJunctionOverhangMin 10 \
-	--chimScoreMin 1 \
-	--chimOutJunctionFormat 1 \
-	--chimScoreDropMax 30 \
-	--chimScoreJunctionNonGTAG 0 \
-	--chimScoreSeparation 1 \
-	--alignSJstitchMismatchNmax 5 -1 5 5 \
-	--chimNonchimScoreDropMin 10 \
-	--peOverlapNbasesMin 12 \
-	--peOverlapMMp 0.1 \
-	--chimSegmentReadGapMax 3 > ${i}_out.bam
-
+--genomeDir "$STAR_INDEX" \
+--readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
+--twopassMode Basic \
+--outReadsUnmapped None \
+--chimSegmentMin 12 \
+--chimJunctionOverhangMin 12 \
+--alignSJDBoverhangMin 10 \
+--alignMatesGapMax 100000 \
+--alignIntronMax 100000 \
+--chimSegmentReadGapMax 3 \
+--alignSJstitchMismatchNmax 5 -1 5 5 \
+--runThreadN ${cpu} \
+--outSAMstrandField intronMotif \
+--outSAMunmapped Within \
+--outSAMtype BAM Unsorted \
+--outSAMattrRGline ID:GRPundef \
+--chimMultimapScoreRange 10 \
+--chimMultimapNmax 10 \
+--chimNonchimScoreDropMin 10 \
+--peOverlapNbasesMin 12 \
+--peOverlapMMp 0.1 \
+--chimOutJunctionFormat 1 
 
 done
