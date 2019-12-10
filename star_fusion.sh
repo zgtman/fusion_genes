@@ -20,6 +20,8 @@ STAR \
 --genomeDir "$STAR_INDEX" \
 --readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
 --twopassMode Basic \
+--outBAMcompression 0 \
+--outFileNamePrefix ${i} \
 --readFilesCommand "gunzip -c" \
 --outReadsUnmapped None \
 --chimSegmentMin 12 \
