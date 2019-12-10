@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # align FastQ files (STAR >=2.5.3a recommended)
-
+T="$(date +%s)"
 
 source fusion_genes/config
 
@@ -42,6 +42,14 @@ STAR \
 --chimNonchimScoreDropMin 10 \
 --peOverlapNbasesMin 12 \
 --peOverlapMMp 0.1 \
---chimOutJunctionFormat 1 
+--chimOutJunctionFormat 1 | samtools sort -@ "$cpu" -T tmp -O BAM -o ${i}_out_sorted.bam -
+
+samtools index ${i}_out_sorted.bam
 
 done
+
+
+T="$(($(date +%s)-T))"
+
+echo "INFO: Time of STAR alignment in seconds: ${T} s"
+
