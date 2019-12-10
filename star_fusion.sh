@@ -20,6 +20,7 @@ STAR \
 --genomeDir "$STAR_INDEX" \
 --readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
 --twopassMode Basic \
+--outStd BAM_Unsorted \
 --outBAMcompression 0 \
 --outFileNamePrefix ${i} \
 --readFilesCommand "gunzip -c" \
