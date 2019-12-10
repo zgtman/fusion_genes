@@ -41,11 +41,9 @@ STAR \
 	--chimNonchimScoreDropMin 10 \
 	--peOverlapNbasesMin 12 \
 	--peOverlapMMp 0.1 \
-	--chimSegmentReadGapMax 3 > ${i}_out.bam
-
-
-samtools sort -@ "$cpu" -T tmp -O BAM ${i}_out.bam > ${i}_out_sorted.bam
+	--chimSegmentReadGapMax 3 | samtools sort -@ "$cpu" -T tmp -O BAM -o ${i}_out_sorted.bam -
 rm -f ${i}_out.bam
+
 samtools index ${i}_out_sorted.bam
 
 done;

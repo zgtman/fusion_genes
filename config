@@ -8,4 +8,4 @@ REFERENCE=/home/broz/data/bioinformatics/Databases/hg38/primary_assembly_hg38.fa
 GENCODE=/home/broz/data/bioinformatics/Databases/gencode/gencode.v28.annotation.gtf
 BLACK_LIST=/home/broz/data/bioinformatics/Databases/arriba_rna_seq_fusion/blacklist_hg38_GRCh38_2018-11-04.tsv.gz
 COSMIC_FUSION=/home/broz/data/bioinformatics/Databases/cosmic/CosmicFusionExport.tsv
-
+LIB_DIR=/home/broz/data/bioinformatics/Databases/star_fusion_ctat_resource_lib/GRCh38_gencode_v32_CTAT_lib_Dec062019.plug-n-play/ctat_genome_lib_build_dir/

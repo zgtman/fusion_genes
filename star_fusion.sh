@@ -1,55 +1,31 @@
 #!/bin/bash
 
-# align FastQ files (STAR >=2.5.3a recommended)
+# detection gene fusion based on STAR-Fusion algorithm
+
 T="$(date +%s)"
 
 source fusion_genes/config
 
+echo "RUN STAR-FUSION DETECTION"
 
-for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
+for i in *.out.junction
 
-do
+do 
 
-echo "INFO: RUN STAR ALIGNER"
+name=${i%Chimeric*}
 
-echo "INFO: Analyzing file: $i"
+echo "INFO: Processing sample: $i"
 
-
-
-STAR \
---genomeDir "$STAR_INDEX" \
---readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
---twopassMode Basic \
---outStd BAM_Unsorted \
---outBAMcompression 0 \
---outFileNamePrefix ${i} \
---readFilesCommand "gunzip -c" \
---outReadsUnmapped None \
---chimSegmentMin 12 \
---chimJunctionOverhangMin 12 \
---alignSJDBoverhangMin 10 \
---alignMatesGapMax 100000 \
---alignIntronMax 100000 \
---chimSegmentReadGapMax 3 \
---alignSJstitchMismatchNmax 5 -1 5 5 \
---runThreadN ${cpu} \
---outSAMstrandField intronMotif \
---outSAMunmapped Within \
---outSAMtype BAM Unsorted \
---outSAMattrRGline ID:GRPundef \
---chimMultimapScoreRange 10 \
---chimMultimapNmax 10 \
---chimNonchimScoreDropMin 10 \
---peOverlapNbasesMin 12 \
---peOverlapMMp 0.1 \
---chimOutJunctionFormat 1 | samtools sort -@ "$cpu" -T tmp -O BAM -o ${i}_out_sorted.bam -
-
-samtools index ${i}_out_sorted.bam
+STAR-Fusion \
+--genome_lib_dir $LIB_DIR \
+-J $i \
+--output_dir "$name"_star_fusion_out
 
 done
+
+#mv *Log.final.out *Log.out *Log.progress.out *Log.std.out 
 
 
 T="$(($(date +%s)-T))"
 
 echo "INFO: Time of STAR alignment in seconds: ${T} s"
-
