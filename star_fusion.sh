@@ -20,6 +20,7 @@ STAR \
 --genomeDir "$STAR_INDEX" \
 --readFilesIn ${i}_L001_R1_001.fastq.gz ${i}_L001_R2_001.fastq.gz \
 --twopassMode Basic \
+--readFilesCommand "gunzip -c" \
 --outReadsUnmapped None \
 --chimSegmentMin 12 \
 --chimJunctionOverhangMin 12 \
