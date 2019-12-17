@@ -9,3 +9,7 @@ GENCODE=/home/broz/data/bioinformatics/Databases/gencode/gencode.v28.annotation.
 BLACK_LIST=/home/broz/data/bioinformatics/Databases/arriba_rna_seq_fusion/blacklist_hg38_GRCh38_2018-11-04.tsv.gz
 COSMIC_FUSION=/home/broz/data/bioinformatics/Databases/cosmic/CosmicFusionExport.tsv
 LIB_DIR=/home/broz/data/bioinformatics/Databases/star_fusion_ctat_resource_lib/GRCh38_gencode_v32_CTAT_lib_Dec062019.plug-n-play/ctat_genome_lib_build_dir/
+
+
+CYTO=fusion_genes/bed_files/cytobands_hg38_GRCh38_2018-02-23.tsv
+DOM=fusion_genes/bed_files/protein_domains_hg38_GRCh38_2018-03-06.gff3

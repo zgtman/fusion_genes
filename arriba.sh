@@ -54,9 +54,9 @@ mkdir qc_all_data
 
 mv *html *json *zip multiqc* qc_all_data/
 
-mkdir arriba_result
+#mkdir arriba_result
 
-mv *fusions*tsv final_arriba.xls arriba_result/
+#mv *fusions*tsv final_arriba.xls arriba_result/
 
 mkdir trimming_logs
 

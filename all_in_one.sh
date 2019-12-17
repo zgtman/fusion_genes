@@ -10,6 +10,7 @@ ln -s fusion_genes/trimming.sh
 ln -s fusion_genes/star_align.sh
 ln -s fusion_genes/star_align1.sh
 ln -s fusion_genes/arriba.sh
+ln -s fusion_genes/arriba_plot_result.sh
 ln -s fusion_genes/star_fusion.sh
 ln -s fusion_genes/star_fusion_all.sh
 
@@ -19,6 +20,7 @@ ln -s fusion_genes/star_fusion_all.sh
 #bash trimming.sh
 bash star_align.sh
 bash arriba.sh
+bash arriba_plot_result.sh
 #bash star_fusion.sh
 bash star_fusion_all.sh
 
@@ -28,6 +30,7 @@ unlink trimming.sh
 unlink star_align.sh
 unlink star_align1.sh
 unlink arriba.sh
+unlink arriba_plot_result.sh
 unlink star_fusion.sh
 unlink star_fusion_all.sh
 
