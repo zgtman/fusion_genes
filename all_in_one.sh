@@ -18,9 +18,9 @@ ln -s fusion_genes/star_fusion_all.sh
 
 #bash fastqc_check.sh
 #bash trimming.sh
-bash star_align.sh
-bash arriba.sh
-bash arriba_plot_result.sh
+#bash star_align.sh ## align only for arriba
+#bash arriba.sh
+#bash arriba_plot_result.sh
 #bash star_fusion.sh
 bash star_fusion_all.sh
 
