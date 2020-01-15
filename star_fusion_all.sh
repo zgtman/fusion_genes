@@ -23,6 +23,8 @@ STAR-Fusion \
 
 done
 
+for i in *_fusion_output; do mv $i/star-fusion.fusion_predictions.tsv "$i"/${i%_trim_star*}_fusion_prediction.tsv; done
+
 T="$(($(date +%s)-T))"
 
 echo "INFO: Time of STAR-FUSION ALL-IN-ONE in seconds: ${T} s"
