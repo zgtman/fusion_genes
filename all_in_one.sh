@@ -16,11 +16,19 @@ ln -s fusion_genes/star_fusion_all.sh
 
 ### RUN SCRIPT
 
+<<<<<<< HEAD
 #bash fastqc_check.sh
 #bash trimming.sh
 #bash star_align.sh ## align only for arriba
 #bash arriba.sh
 #bash arriba_plot_result.sh
+=======
+bash fastqc_check.sh
+bash trimming.sh
+bash star_align.sh ## align only for arriba
+bash arriba.sh
+bash arriba_plot_result.sh
+>>>>>>> b73290b5d7bcf12b8804d1e86591dfb5e71b2ec4
 #bash star_fusion.sh # not used
 bash star_fusion_all.sh
 
