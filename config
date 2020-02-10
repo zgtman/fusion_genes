@@ -3,6 +3,8 @@
 cpu=$(nproc)
 memory=32
 
+dict=/data/bioinformatics/Databases/hg38/primary_assembly_hg38.dict
+
 STAR_INDEX=/home/broz/data/bioinformatics/Databases/hg38/star_index/
 REFERENCE=/home/broz/data/bioinformatics/Databases/hg38/primary_assembly_hg38.fa
 GENCODE=/home/broz/data/bioinformatics/Databases/gencode/gencode.v28.annotation.gtf
@@ -13,3 +15,35 @@ LIB_DIR=/home/broz/data/bioinformatics/Databases/star_fusion_ctat_resource_lib/G
 
 CYTO=fusion_genes/bed_files/cytobands_hg38_GRCh38_2018-02-23.tsv
 DOM=fusion_genes/bed_files/protein_domains_hg38_GRCh38_2018-03-06.gff3
+
+
+## VARIANT CALLING	
+
+dbsnp=/home/broz/data/bioinformatics/Databases/dbSNP/hg38/dbsnp_146.hg38.vcf.gz
+
+## Set up parameters for varScan
+
+min_coverage=10
+min_qual=10
+min_qual_indel=5
+min_reads=4
+min_var_freq=0.05
+min_freq_hom=0.75
+strand_filter=0
+p_value=0.05
+
+## Samtools mpileup
+mapping=0
+base=1
+
+## VEP annotation
+
+ref=hg38
+verze_vep=99
+assembly=GRCh38
+datNSFP=~/data/bioinformatics/Databases/dbNSFP/dbNSFP4.0b2a.gz
+hg38_vep=~/data/bioinformatics/Databases/hg38/primary_assembly_hg38.fa
+dir_vep=~/data/bioinformatics/Databases/vep
+CLN38=~/data/bioinformatics/Databases/ClinVar/hg38/clinvar_20200203.vcf.gz
+DBSNP38=~/data/bioinformatics/Databases/dbSNP/hg38/All_20180418.vcf.gz 
+database=RefSeq

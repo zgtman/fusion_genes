@@ -1,0 +1,11 @@
+[[annotation]]
+file="CLN38"
+fields=["CLNDN", "CLNREVSTAT", "CLNSIG", "ALLELEID"]
+names=["CLNDN", "CLNREVSTAT", "CLNSIG", "CLNID"]
+ops=["self", "self", "self", "self"]
+
+[[annotation]]
+file="DBSNP38"
+fields=["RS"]
+names=["RS"]
+ops=["self"]

@@ -1,0 +1,14 @@
+offline
+quite
+cache_version 99
+assebly GRCh38
+dir ~/data/bioinformatics/Databases/vep
+merged
+no_stats
+canonical
+pick
+force_overwrite
+buffer_size 4000
+fasta /home/broz/data/bioinformatics/Databases/hg38/primary_assembly_hg38.fa
+format vcf
+

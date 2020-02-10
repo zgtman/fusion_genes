@@ -1,0 +1,18 @@
+[[annotation]]
+file="/home/broz/data/bioinformatics/Databases/ClinVar/hg38/clinvar_20200203.vcf.gz"
+fields=["CLNDN", "CLNREVSTAT", "CLNSIG", "ALLELEID", "ORIGIN"]
+names=["CLNDN", "CLNREVSTAT", "CLNSIG", "CLNID", "CLORIGIN"]
+ops=["self", "self", "self", "self", "self"]
+
+[[annotation]]
+file="/home/broz/data/bioinformatics/Databases/dbSNP/hg38/All_20180418.vcf.gz"
+fields=["RS", "GENEINFO", "SAO"]
+names=["rs", "dbsnp_geneinfo", "dbsnp_origin"]
+ops=["self", "self", "self"]
+
+[[annotation]]
+file="/home/broz/data/bioinformatics/Databases/cosmic/CosmicCodingMuts.vcf.gz"
+fields=["GENE", "GENOMIC_ID", "LEGACY_ID", "CDS", "AA", "CNT", "SNP"]
+names=["cosgene", "cos_genid", "coslegacy", "coscds", "cosaa", "coscnt", "cossnp"]
+ops=["self", "self", "self", "self", "self", "self", "self"]
+
