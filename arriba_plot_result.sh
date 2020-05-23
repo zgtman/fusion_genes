@@ -24,12 +24,11 @@ draw_fusions.R \
 
 done
 
-}
-
-
 T="$(($(date +%s)-T))"
 
 echo "INFO: Time of ARRIBA in seconds: ${T} s"
+
+}
 
 
 ########################
