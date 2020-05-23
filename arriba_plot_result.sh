@@ -2,8 +2,11 @@
 
 T="$(date +%s)"
 
-source fusion_genes/config
+full_path=$(readlink -e arriba_plot_result.sh)
+source ${full_path%/*}/config
 
+
+function plot() {
 
 for i in *fusions.tsv
 
@@ -17,13 +20,18 @@ draw_fusions.R \
     --annotation=$GENCODE \
     --cytobands=$CYTO \
     --proteinDomains=$DOM
-#    --alignments=/home/broz/ssd/arriba_workflow/test/LU5-Doc_S8_trim_out_sorted.bam \
-
+    --alignments=${i%_fusions.tsv}.bam \
 
 done
+
+}
 
 
 T="$(($(date +%s)-T))"
 
 echo "INFO: Time of ARRIBA in seconds: ${T} s"
+
+
+########################
+plot
 
