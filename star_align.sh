@@ -46,11 +46,12 @@ STAR \
 	--chimSegmentReadGapMax 3 | samtools sort -@ "$cpu" -T tmp -O BAM -o ${i}_out_sorted.bam -
 rm -f ${i}_out.bam
 
-samtools index ${i}_out_sorted.bam
-
 done;
 
 conda deactivate
+
+parallel -k "samtools index {}" ::: *_out_sorted.bam
+
 
 T="$(($(date +%s)-T))"
 
