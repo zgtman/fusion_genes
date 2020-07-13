@@ -10,6 +10,8 @@ for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
 do
 
+conda activate star-fusion_env
+
 name=${i%_L001*}
 
 echo "INFO: Analyzing file: $i"
@@ -24,6 +26,8 @@ STAR-Fusion \
 done
 
 for i in *_fusion_output; do mv $i/star-fusion.fusion_predictions.tsv "$i"/${i%_trim_star*}_fusion_prediction.tsv; done
+
+conda deactivate
 
 T="$(($(date +%s)-T))"
 

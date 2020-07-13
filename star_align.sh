@@ -11,6 +11,8 @@ for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
 do
 
+conda activate star-fusion_env
+
 echo "INFO: RUN STAR ALIGNER"
 
 echo "INFO: Analyzing file: $i"
@@ -47,6 +49,8 @@ rm -f ${i}_out.bam
 samtools index ${i}_out_sorted.bam
 
 done;
+
+conda deactivate
 
 T="$(($(date +%s)-T))"
 

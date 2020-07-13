@@ -11,6 +11,8 @@ for i in $(ls *sorted.bam)
 
 do
 
+conda activate arriba_env
+
 echo "INFO: RUN ARRIBA FUSION DETECTION"
 
 echo "INFO: Analyzing file: $i"
@@ -28,6 +30,8 @@ arriba \
 
 
 done;
+
+conda deactivate
 
 # concatanate all results with header to one final final report (include sample name)
 
@@ -47,8 +51,11 @@ head -1 $file | awk '{OFS="\t"}{print "NAME",$0}' | tr -d "#" | cat - tmp_result
 
 rm -f tmp_result.xls
 
+conda activate multiqc_env
 
 multiqc . --ignore qc/
+
+conda deactivate
 
 mkdir qc_all_data
 
