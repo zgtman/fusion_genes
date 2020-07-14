@@ -7,11 +7,11 @@ source fusion_genes/config
 
 # arriba workflow
 
+conda activate arriba_env
+
 for i in $(ls *sorted.bam)
 
 do
-
-conda activate arriba_env
 
 echo "INFO: RUN ARRIBA FUSION DETECTION"
 
