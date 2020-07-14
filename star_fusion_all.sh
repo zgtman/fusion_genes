@@ -6,11 +6,11 @@ source fusion_genes/config
 
 echo "STAR-FUSION ALL IN WORKFLOW"
 
+conda activate star-fusion_env
+
 for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
 do
-
-conda activate star-fusion_env
 
 name=${i%_L001*}
 
