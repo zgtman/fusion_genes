@@ -8,6 +8,8 @@ source ${full_path%/*}/config
 
 function plot() {
 
+conda activate arriba_env
+
 for i in *fusions.tsv
 
 do 
@@ -27,6 +29,8 @@ done
 T="$(($(date +%s)-T))"
 
 echo "INFO: Time of ARRIBA in seconds: ${T} s"
+
+conda deactivate
 
 }
 
