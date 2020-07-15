@@ -6,6 +6,8 @@ source fusion_genes/config
 
 echo "STAR-FUSION ALL IN WORKFLOW"
 
+conda activate star-fusion_env
+
 for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
 do
@@ -24,6 +26,8 @@ STAR-Fusion \
 done
 
 for i in *_fusion_output; do mv $i/star-fusion.fusion_predictions.tsv "$i"/${i%_trim_star*}_fusion_prediction.tsv; done
+
+conda deactivate
 
 T="$(($(date +%s)-T))"
 

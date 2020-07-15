@@ -7,6 +7,8 @@ source fusion_genes/config
 
 # arriba workflow
 
+conda activate arriba_env
+
 for i in $(ls *sorted.bam)
 
 do
@@ -29,6 +31,8 @@ arriba \
 
 done;
 
+conda deactivate
+
 # concatanate all results with header to one final final report (include sample name)
 
 touch tmp_result.xls
@@ -47,8 +51,11 @@ head -1 $file | awk '{OFS="\t"}{print "NAME",$0}' | tr -d "#" | cat - tmp_result
 
 rm -f tmp_result.xls
 
+conda activate multiqc_env
 
 multiqc . --ignore qc/
+
+conda deactivate
 
 mkdir qc_all_data
 
