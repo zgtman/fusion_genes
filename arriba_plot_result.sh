@@ -10,7 +10,7 @@ DOM=${full_path%/*}/bed_files/protein_domains_hg38_GRCh38_2018-03-06.gff3
 
 function plot() {
 
-conda activate arriba_env
+conda activate arriba_plot
 
 for i in *fusions.tsv
 
