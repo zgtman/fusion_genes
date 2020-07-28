@@ -27,7 +27,7 @@ bash arriba.sh
 bash arriba_plot_result.sh
 bash star_fusion_all.sh
 bash variant_calling_VS.sh
-#bash annotation.sh
+bash annotation.sh
 
 
 unlink config
