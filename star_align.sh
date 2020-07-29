@@ -11,7 +11,7 @@ for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
 do
 
-#conda activate star-fusion_env
+conda activate star_env
 
 echo "INFO: RUN STAR ALIGNER"
 
@@ -48,7 +48,7 @@ rm -f ${i}_out.bam
 
 done;
 
-#conda deactivate
+conda deactivate
 
 parallel -k "samtools index {}" ::: *_out_sorted.bam
 
