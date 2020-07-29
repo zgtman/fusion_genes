@@ -24,7 +24,7 @@ draw_fusions.R \
     --annotation=$GENCODE \
     --cytobands=$CYTO \
     --proteinDomains=$DOM \
-    --alignments=${i%_fusions.tsv}.bam \
+#    --alignments=${i%_fusions.tsv}.bam \
 
 done
 
