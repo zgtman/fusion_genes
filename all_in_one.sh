@@ -20,8 +20,8 @@ ln -s fusion_genes/annotation.sh
 
 ### RUN SCRIPT
 
-bash fastqc_check.sh
-bash trimming.sh
+#bash fastqc_check.sh
+#bash trimming.sh
 #bash star_align.sh ## align only for arriba
 #bash arriba.sh
 #bash arriba_plot_result.sh
