@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /var/anaconda3/etc/profile.d/conda.sh 
+
 T="$(date +%s)"
 
 source fusion_genes/config
