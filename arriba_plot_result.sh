@@ -1,6 +1,7 @@
 #!/bin/bash
 
 T="$(date +%s)"
+source /var/anaconda3/etc/profile.d/conda.sh 
 
 full_path=$(readlink -e arriba_plot_result.sh)
 source ${full_path%/*}/config
@@ -10,7 +11,7 @@ DOM=${full_path%/*}/bed_files/protein_domains_hg38_GRCh38_2018-03-06.gff3
 
 function plot() {
 
-conda activate arriba_plot
+conda activate arriba_env
 
 for i in *fusions.tsv
 

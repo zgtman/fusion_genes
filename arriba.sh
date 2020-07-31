@@ -2,8 +2,8 @@
 
 T="$(date +%s)"
 
+source /var/anaconda3/etc/profile.d/conda.sh 
 source fusion_genes/config
-
 
 # arriba workflow
 

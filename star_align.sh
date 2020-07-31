@@ -2,6 +2,7 @@
 
 T="$(date +%s)"
 
+source /var/anaconda3/etc/profile.d/conda.sh 
 source fusion_genes/config
 
 
@@ -11,7 +12,7 @@ for i in $(ls *trim*.fastq.gz | rev | cut -c 22- | rev | sort | uniq)
 
 do
 
-conda activate star_env
+conda activate arriba_env
 
 echo "INFO: RUN STAR ALIGNER"
 
@@ -50,7 +51,11 @@ done;
 
 conda deactivate
 
+conda activate samtools_env
+
 parallel -k "samtools index {}" ::: *_out_sorted.bam
+
+conda deactivate
 
 
 T="$(($(date +%s)-T))"
