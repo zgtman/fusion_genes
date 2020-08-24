@@ -6,12 +6,15 @@
 ##### INSTALATION INSTRUCTION:  
 *sudo yum install parallel*  
 *conda create -n arriba_env -c bioconda arriba*
-*conda create -n star_env -c bioconda/label/cf201901 star*  
+*wget https://anaconda.org/bioconda/star-fusion/1.9.0/download/noarch/star-fusion-1.9.0-1.tar.bz2*
+*conda create -n star-fusion_env  star-fusion-1.9.0-1.tar.bz2*
+*conda install -c bioconda star=2.7.2b*
 *conda install -c bioconda fastp*  
 ##### ADDITIONAL INSTALLATION FOR STAR FUSION WORKFLOW  
-*conda create -n star-fusion_env -c bioconda/label/cf201901 star-fusion* 
 
-conda install picard samtools gatk4 vcfanno fastqc
+conda install picard gatk4 vcfanno fastqc
+conda create -n samtools_env -c bioconda samtools openssl=1.0
+
 ###### donwload annotation package for GRCh38: wget https://data.broadinstitute.org/Trinity/CTAT_RESOURCE_LIB/GRCh38_gencode_v32_CTAT_lib_Dec062019.plug-n-play.tar.gz
 ###### TODO  
 ###### **Test data to STAR-FUSION**  
