@@ -15,7 +15,7 @@ echo "INFO: Found number of files: $number"
 echo "INFO: Analyzing file: $i"
 
 
-fastp -i ${i}_L001_R1_001.fastq.gz -I ${i}_L001_R2_001.fastq.gz -o ${i}_trim_L001_R1_001.fastq.gz -O ${i}_trim_L001_R2_001.fastq.gz -j ${i}.json -h ${i}.html -t $cpu
+$fastp -i ${i}_L001_R1_001.fastq.gz -I ${i}_L001_R2_001.fastq.gz -o ${i}_trim_L001_R1_001.fastq.gz -O ${i}_trim_L001_R2_001.fastq.gz -j ${i}.json -h ${i}.html -t $cpu
 
 done;
 

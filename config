@@ -3,6 +3,9 @@
 cpu=$(nproc)
 memory=32
 
+fastp=/var/anaconda3/envs/fastp_env/bin/fastp
+
+
 dict=/home/broz/data/nfsshare/bioinformatics/Databases/hg38/primary_assembly_hg38.dict
 
 STAR_INDEX=/home/broz/data/nfsshare/bioinformatics/Databases/hg38/star_index
